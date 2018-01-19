@@ -1,0 +1,42 @@
+//---------------------------
+//          FUNCTIONS          
+//---------------------------
+//---------------------------------------------------------------------------
+// Name:-                           get-basis
+//
+// Description:- calculates the flex-basis 
+//
+// Params:-
+//    $cols
+//    $totalCols
+//    $gutterLeft
+//    $gutterRight
+//
+//----------------------------------------------------------------------------
+@function get-basis($cols, $totalCols, $gutterLeft, $gutterRight) {
+  $width: percentage($number: $cols / $totalCols);
+  $isGutter: $gutterLeft + $gutterRight == 0;
+
+  @if $isGutter == true {
+    @return #{$width};
+  }
+  @else {
+    @return calc(#{$width} - #{$gutterLeft + $gutterRight});
+  }
+}
+
+//---------------------------------------------------------------------------
+// Name:-                           get-offset
+//
+// Description:- calculates the offset amount 
+//
+// Params:-
+//    $amount
+//    $gutter
+//
+//----------------------------------------------------------------------------
+@function get-offset($amount, $gutter) {
+  $offset: calc(#{$amount + $gutter});
+
+  @return calc(#{$amount + $gutter});
+}

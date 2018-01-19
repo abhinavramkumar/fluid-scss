@@ -1,0 +1,28 @@
+//---------------------------
+//        VARIABLES          
+//---------------------------
+// Recommended Line-height ratios
+$lh-12: 1.58333;
+$lh-13: 1.61538;
+$lh-14: 1.64286;
+$lh-15: 1.6;
+$lh-16: 1.625;
+$lh-17: 1.64706;
+$lh-18: 1.61111;
+
+// Root Font Size
+$root-font-size: 16px;
+
+//Root Line Height -default font size - 16px
+$root-line-height: $lh-16;
+
+// Font family
+$root-font-family: "Open Sans", sans-serif;
+
+$ubuntu-mono: "Ubuntu Mono", monospace;
+
+// Container Widths
+$container-width: 95%;
+
+// Header Height
+$header-height: 4rem;

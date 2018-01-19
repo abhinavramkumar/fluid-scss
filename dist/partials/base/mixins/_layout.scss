@@ -1,0 +1,137 @@
+//---------------------------
+//       LAYOUT MIXINS          
+//---------------------------
+//---------------------------------------------------------------------------
+// Name:-                           flex
+//
+// Params:-
+//    $direction                            - flex-direction 
+//    $align                                - align-items
+//    $justify                              - justify-content
+//    $wrap                                 - flex-wrap
+//
+//----------------------------------------------------------------------------
+@mixin flex($direction: row, $align: flex-start, $justify: flex-start, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+//---------------------------------------------------------------------------
+// Name:-                       alignAndJustify
+//
+// Params:-
+//    $align                                - align-items
+//    $justify                              - justify-content
+//
+//----------------------------------------------------------------------------
+@mixin alignAndJustify($align: flex-start, $justify: flex-start) {
+  align-items: $align;
+  justify-content: $justify;
+}
+
+//---------------------------------------------------------------------------
+// Name:-                         flexCol
+//
+// Params:-
+//    $cols                                 - number of columns wrt to the grid
+//    $totalCols                            - total columns in the grid
+//    $gutterLeft, $gutterRight             - Gutter width between columns
+//    $offsetDirection. $offsetWidth        - direction to add offset
+//      - ex: 'left' , 200px would add a space of 200px to the left
+//    $alignSelf                            - align-self
+//
+//----------------------------------------------------------------------------
+@mixin flexCol($cols: 6, $totalCols: 12, $gutterLeft: 16px, $gutterRight: 16px, $offsetDirection: left, $offsetAmount: 0, $alignSelf: auto) {
+  $basis: get-basis($cols, $totalCols, $gutterLeft, $gutterRight);
+
+  flex-basis: $basis;
+
+  /* Check offset direction and amount */
+  @if $offsetAmount == 0 and $offsetDirection == "left" {
+    margin-left: #{$gutterLeft};
+    margin-right: #{$gutterRight};
+  }
+  @else if $offsetAmount == 0 and $offsetDirection == "right" {
+    margin-left: #{$gutterLeft};
+    margin-right: #{$gutterRight};
+  }
+  @else if $offsetAmount != 0 {
+    @if $offsetDirection == "left" {
+      margin-left: get-offset($offsetAmount, $gutterLeft);
+      margin-right: #{$gutterRight};
+    }
+    @else if $offsetDirection == "right" {
+      margin-right: get-offset($offsetAmount, $gutterRight);
+      margin-left: #{$gutterLeft};
+    }
+  }
+  @else {
+    @warn "ERROR: Invalid arguments";
+  }
+
+  align-self: $alignSelf;
+}
+
+//---------------------------------------------------------------------------
+// Name:-                           offset
+//
+// Params:-
+//    $direction                            
+//    $width                                
+//
+//----------------------------------------------------------------------------
+@mixin offset($direction: "left", $width: 10%) {
+  margin-#{$direction}: #{$width};
+}
+
+//---------------------------------------------------------------------------
+// Name:-                           resetOffset
+//
+// Params:-
+//    No Params                                
+//
+//----------------------------------------------------------------------------
+@mixin resetOffset {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+//---------------------------------------------------------------------------
+// Name:-                           generateFlexBox
+//
+// Params:-
+//    $name
+//    $cols
+//    $first                                
+//
+//----------------------------------------------------------------------------
+@mixin generateFlexBox($name: hex, $cols: 16, $first: true) {
+  .flex {
+    @include flex(row, flex-start, space-between, wrap);
+  }
+
+  @for $i from 1 through $cols {
+    .#{$name}-#{$i} {
+      @include flexCol($i, $cols, 0.5rem, 0.5rem);
+    }
+  }
+
+  @if $first == true {
+    @for $i from 1 through $cols {
+      .offset-left-#{$i} {
+        @include offset("left", $i * 8.3333%);
+      }
+
+      .offset-right-#{$i} {
+        @include offset("right", $i * 8.3333%);
+      }
+
+      .order-#{$i} {
+        order: #{$i};
+      }
+    }
+  }
+}

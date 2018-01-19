@@ -1,0 +1,7 @@
+@mixin boxShadow($h: -2px, $v: 2px, $blur: 7px, $spread: 0px, $color: hsla(0, 100%, 0%, 0.25)) {
+  box-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
+}
+
+@mixin textShadow($h: -2px, $v: 2px, $blur: 7px, $spread: 0px, $color: hsla(0, 100%, 0%, 0.25)) {
+  text-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
+}

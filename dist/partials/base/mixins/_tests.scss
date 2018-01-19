@@ -1,0 +1,8 @@
+//-----------------------------------
+//  TESTS MIXINS - for testing Only          
+//-----------------------------------
+// ONLY FOR TESTING
+// Test Border
+@mixin borderTest($c: black) {
+  border: 1px solid #{$c};
+}

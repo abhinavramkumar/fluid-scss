@@ -1,0 +1,32 @@
+//---------------------------
+//      BACKGROUND MIXIN          
+//---------------------------
+//---------------------------------------------------------------------------
+// Name:-                           bg
+//
+// Params:-
+//    $backgroundColor                      - background-color
+//    $backgroundImageURL                   - background-image
+//    $backgroundSize                       - background-size
+//    $backgroundPositionX                  - background-position-x
+//    $backgroundPositionY                  - background-position-y
+//    $backgroundRepeat                     - background-repeat
+//    $backgroundAttachment                 - background-attachment
+//    $backgroundBlendMode                  - background-blend-mode
+//
+//---------------------------------------------------------------------------- 
+// Set only background Color
+@mixin bgColor($color: #000) {
+  background-color: #{$color};
+}
+
+// Set complete background property
+@mixin bg($backgroundColor: #fff, $backgroundImageURL: "./img/test.png", $backgroundSize: cover, $backgroundPositionX: 50%, $backgroundPositionY: 50%, $backgroundRepeat: no-repeat, $backgroundAttachment: fixed, $backgroundBlendMode: normal) {
+  background-color: #{$backgroundColor};
+  background-image: url(#{$backgroundImageURL});
+  background-position: #{$backgroundPositionX} #{$backgroundPositionY};
+  background-repeat: $backgroundRepeat;
+  background-size: $backgroundSize;
+  background-attachment: $backgroundAttachment;
+  background-blend-mode: $backgroundBlendMode;
+}

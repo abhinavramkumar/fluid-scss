@@ -1,0 +1,14 @@
+//---------------------------
+//     TYPOGRAPHY MIXINS          
+//---------------------------
+//---------------------------------------------------------------------------
+// Name:-                           fontSize
+//
+// Params:-
+//    $fontSize                             - font-size
+//
+//----------------------------------------------------------------------------
+@mixin fontSize($fontSize: 1rem) {
+  font-size: #{$fontSize};
+  line-height: $fontSize * $root-line-height;
+}

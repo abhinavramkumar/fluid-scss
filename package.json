@@ -1,0 +1,18 @@
+{
+  "name": "plastic-scss-test",
+  "version": "0.0.1",
+  "description": "scss mixins and classes for rapid web development",
+  "main": "index.html",
+  "author": "codeFusion",
+  "license": "MIT",
+  "scripts": {
+    "sass-convert": "sass-convert -F scss -T scss --in-place -R ./dist/",
+    "sass:prod": "gulp && yarn run sass-convert",
+    "sass:dev": "sass --watch ./styles/styles.scss:./styles/styles.css"
+  },
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.1.0"
+  }
+}

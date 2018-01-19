@@ -1,0 +1,23 @@
+/*************************************************
+*   Plastic.scss - Lightweight SCSS Library
+*   
+*   Author: codeFusion
+*   Github:  
+*************************************************/
+
+// Setup the default font
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i");
+
+// Base Files
+@import "./partials/base/base";
+
+// Component Files
+@import "./partials/components/components";
+
+// Helper Files
+@import "./partials/helpers/helpers";
+
+// Media Queries for Responsive Design
+@import "./partials/responsive/responsive";

@@ -1,0 +1,297 @@
+//---------------------------
+//      CONFIG & RESETS          
+//---------------------------
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $root-font-size;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+main,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: $root-font-family;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+main,
+article,
+section,
+aside,
+nav,
+footer {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding-right: 1.5rem;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+img {
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+}
+
+// Headers Set According To Perfect Fourth Ratio
+h1 {
+  font-size: 3.157rem;
+  line-height: 3.157rem * $root-line-height;
+
+  &.subtitle {
+    font-size: 0.8 * 3.157rem;
+    line-height: 0.8 * 3.157rem * $root-line-height;
+  }
+}
+
+h2 {
+  font-size: 2.369rem;
+  line-height: 2.369rem * $root-line-height;
+
+  &.subtitle {
+    font-size: 0.8 * 2.369rem;
+    line-height: 0.8 * 2.369rem * $root-line-height;
+  }
+}
+
+h3 {
+  font-size: 1.777rem;
+  line-height: 1.777rem * $root-line-height;
+
+  &.subtitle {
+    font-size: 0.8 * 1.777rem;
+    line-height: 0.8 * 1.777rem * $root-line-height;
+  }
+}
+
+h4 {
+  font-size: 1.333rem;
+  line-height: 1.333rem * $root-line-height;
+
+  &.subtitle {
+    font-size: 0.8 * 1.333rem;
+    line-height: 0.8 * 1.333rem * $root-line-height;
+  }
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: #{$root-line-height};
+}
+
+h6 {
+  font-size: 0.707rem;
+  line-height: #{$root-line-height};
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+p,
+ul,
+ol,
+li,
+a,
+button,
+label,
+input,
+select,
+option,
+figcaption,
+textarea {
+  @include fontSize(1rem);
+
+  margin-bottom: 1rem;
+}
+
+pre,
+code {
+  width: 100%;
+}
+
+pre {
+  @include flex(row, center, flex-start);
+
+  background-color: #2c2c2c;
+  border-radius: 5px;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+code {
+  @include fontSize(0.9rem);
+
+  font-family: $ubuntu-mono;
+  color: hsla(90, 100%, 50%, 1);
+
+  span {
+    font-family: $ubuntu-mono;
+  }
+
+  .identifier {
+    color: hsla(0, 100%, 76%, 1);
+  }
+
+  .function {
+    color: hsla(190, 100%, 80%, 1);
+  }
+
+  .bracket {
+    color: hsla(60, 100%, 80%, 1);
+  }
+
+  .comment {
+    color: hsla(0, 10%, 80%, 1);
+    font-style: italic;
+  }
+}
+
+// Basic Container
+.container {
+  width: #{$container-width};
+  margin: 0 auto;
+  height: 100%;
+}

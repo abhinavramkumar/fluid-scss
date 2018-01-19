@@ -1,0 +1,54 @@
+// Header
+.Plastic__header {
+  @include borderTest(#ccc);
+
+  width: 100%;
+  height: #{$header-height};
+  overflow: hidden;
+}
+
+// Nav
+.Plastic__nav {
+  @extend .Plastic__header;
+
+  @include flex(row, center, space-between);
+
+  border: none;
+
+  /* Nav brand */
+  .nav__brand {
+    @include flex(row, center, center);
+
+    height: 100%;
+  }
+
+  .brand {
+    font-size: 2rem;
+    line-height: unquote("2 * #{$root-line-height}");
+  }
+
+  /* Nav Links*/
+  .nav__links {
+    @include flex(row, center, flex-start);
+
+    height: 100%;
+  }
+
+  .nav__link {
+    @include flex(row, center, center);
+
+    height: 100%;
+
+    a {
+      height: 100%;
+      padding: 0 1.5rem;
+      line-height: #{$header-height};
+      color: #000;
+      transition: background-color 100ms ease-in-out;
+    }
+
+    a:hover {
+      background-color: #ccc;
+    }
+  }
+}
