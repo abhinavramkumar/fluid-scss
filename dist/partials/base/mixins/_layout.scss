@@ -2,9 +2,9 @@
 //       LAYOUT MIXINS          
 //---------------------------
 //---------------------------------------------------------------------------
-// Name:-                           flex
+// @name:                           flex
 //
-// Params:-
+// @params:
 //    $direction                            - flex-direction 
 //    $align                                - align-items
 //    $justify                              - justify-content
@@ -20,9 +20,9 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                       alignAndJustify
+// @name:                       alignAndJustify
 //
-// Params:-
+// @params:
 //    $align                                - align-items
 //    $justify                              - justify-content
 //
@@ -33,9 +33,9 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                         flexCol
+// @name:                         flexCol
 //
-// Params:-
+// @params:
 //    $cols                                 - number of columns wrt to the grid
 //    $totalCols                            - total columns in the grid
 //    $gutterLeft, $gutterRight             - Gutter width between columns
@@ -76,11 +76,11 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                           offset
+// @name:                           offset
 //
-// Params:-
-//    $direction                            
-//    $width                                
+// @params:
+//    $direction                          - left,right                
+//    $width                              - value in %  
 //
 //----------------------------------------------------------------------------
 @mixin offset($direction: "left", $width: 10%) {
@@ -88,9 +88,9 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                           resetOffset
+// @name:                           resetOffset
 //
-// Params:-
+// @params:
 //    No Params                                
 //
 //----------------------------------------------------------------------------
@@ -100,12 +100,12 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                           generateFlexBox
+// @name:                           generateFlexBox
 //
-// Params:-
-//    $name
-//    $cols
-//    $first                                
+// @params:
+//    $name                               - col,hex etc.
+//    $cols                               - 12, 16, 21
+//    $first                              - true, false
 //
 //----------------------------------------------------------------------------
 @mixin generateFlexBox($name: hex, $cols: 16, $first: true) {
@@ -132,6 +132,39 @@
       .order-#{$i} {
         order: #{$i};
       }
+    }
+  }
+}
+
+//---------------------------------------------------------------------------
+// @name:                           generateLayoutHelpers
+//
+// @params:
+//    $layout                             - margin, padding
+//    $prefix                             - m,p
+//    $count                              - 1,2,3 etc.
+//
+//----------------------------------------------------------------------------
+@mixin generateLayoutHelpers($layout: margin, $prefix: m, $count: 3) {
+  @for $i from 1 to $count {
+    .#{$prefix}-#{$i} {
+      #{$layout}: #{$count}rem;
+    }
+
+    .#{$prefix}t-#{$i} {
+      #{$layout}-top: #{$count}rem;
+    }
+
+    .#{$prefix}b-#{$i} {
+      #{$layout}-bottom: #{$count}rem;
+    }
+
+    .#{$prefix}l-#{$i} {
+      #{$layout}-left: #{$count}rem;
+    }
+
+    .#{$prefix}r-#{$i} {
+      #{$layout}-right: #{$count}rem;
     }
   }
 }

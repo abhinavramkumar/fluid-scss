@@ -2,11 +2,11 @@
 //          FUNCTIONS          
 //---------------------------
 //---------------------------------------------------------------------------
-// Name:-                           get-basis
+// @name:                           get-basis
 //
 // Description:- calculates the flex-basis 
 //
-// Params:-
+// @params:
 //    $cols
 //    $totalCols
 //    $gutterLeft
@@ -26,13 +26,13 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                           get-offset
+// @name:                           get-offset
 //
 // Description:- calculates the offset amount 
 //
-// Params:-
-//    $amount
-//    $gutter
+// @params:
+//    $amount                             - amount as columns out of total columns
+//    $gutter                             - gutter size - for equal  
 //
 //----------------------------------------------------------------------------
 @function get-offset($amount, $gutter) {

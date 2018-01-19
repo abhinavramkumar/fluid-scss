@@ -1,7 +1,32 @@
-@mixin boxShadow($h: -2px, $v: 2px, $blur: 7px, $spread: 0px, $color: hsla(0, 100%, 0%, 0.25)) {
+//---------------------------
+//    SHADOW MIXINS          
+//---------------------------
+//---------------------------------------------------------------------------
+// @name:                         boxShadow
+//
+// @params: 
+//  $h                                    - horozontal distance - value in px
+//  $v                                    - vertical distance - value in px
+//  $blur                                 - blur amount - value in px 
+//  $spread                               - spread amount -value in px
+//  $color                                - color in any form - hex,rgb,rgba(),hsla()                           
+//
+//----------------------------------------------------------------------------
+@mixin boxShadow($h: -2px, $v: 2px, $blur: 7px, $spread: 0, $color: hsla(0, 100%, 0%, 0.25)) {
   box-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
 }
 
-@mixin textShadow($h: -2px, $v: 2px, $blur: 7px, $spread: 0px, $color: hsla(0, 100%, 0%, 0.25)) {
+//---------------------------------------------------------------------------
+// @name:                         textShadow
+//
+// @params: 
+//  $h                                    - horozontal distance - value in px
+//  $v                                    - vertical distance - value in px
+//  $blur                                 - blur amount - value in px 
+//  $spread                               - spread amount -value in px
+//  $color                                - color in any form - hex,rgb,rgba(),hsla()                           
+//
+//----------------------------------------------------------------------------
+@mixin textShadow($h: -2px, $v: 2px, $blur: 7px, $spread: 0, $color: hsla(0, 100%, 0%, 0.25)) {
   text-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
 }

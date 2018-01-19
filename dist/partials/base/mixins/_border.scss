@@ -2,9 +2,9 @@
 //       BORDER MIXINS          
 //---------------------------
 //---------------------------------------------------------------------------
-// Name:-                           border
+// @name:                           border
 //
-// Params:-
+// @params:
 //    $width                                - border-width
 //    $style                                - border-style
 //    $color                                - border-color
@@ -19,10 +19,10 @@
 }
 
 //---------------------------------------------------------------------------
-// Name:-                         borderSingle
+// @name:                         borderSingle
 //
-// Params:-
-//    $side                                 
+// @params:
+//    $side                                 - "bottom", "top", "left", "right"
 //    $width                                - border-#{side}-width
 //    $style                                - border-#{side}-style
 //    $color                                - border-#{side}-color

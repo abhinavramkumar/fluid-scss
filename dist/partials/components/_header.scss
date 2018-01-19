@@ -1,4 +1,5 @@
 // Header
+//## Header
 .Plastic__header {
   @include borderTest(#ccc);
 
@@ -24,7 +25,8 @@
 
   .brand {
     font-size: 2rem;
-    line-height: unquote("2 * #{$root-line-height}");
+    line-height: 2rem * $root-line-height;
+    margin-bottom: 0;
   }
 
   /* Nav Links*/

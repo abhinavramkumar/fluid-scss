@@ -5,9 +5,124 @@
 *   Github:  
 *************************************************/
 
-// Setup the default font
+//------------------------------------------------
+//#######         List of Mixins          ########
+//------------------------------------------------ 
+//## To Generate Custom Flex Grid
+// 
+// @include generateFlexBox($name:hex, $cols:16, $first: true)
+//
+//------------------------------------------------
+//##  For Flexbox - for parent element
+//
+//  @include flex( $flexDirection, $alignItems, $justifyContent, $flexWrap)
+//
+//-------------------------------------------------
+//##  For Flex Child - for child elements
+//
+//  @include flexCol($col, $totalColumns, $gutterLeft, $gutterRight, $offsetDirection, $offsetAmount)
+//
+//-------------------------------------------------
+//## Change Align Items & Justify Content Property
+//
+// @include alignAndJustify($align, $justify)
+//
+//-------------------------------------------------
+//## Generate Layout Helpers for margin & Padding
+//
+// @include generateLayoutHelpers($layout, $prefix, $count)
+//
+//-------------------------------------------------
+//## Change Align Items & Justify Content Property
+//
+// @include offset($direction, $width)
+//
+//-------------------------------------------------
+//## For Background Color
+//
+// @include bgColor($color)
+//
+//-------------------------------------------------
+//## For Complete Background Properties Including Image properties
+//
+// @include bg($backgroundColor, $backgroundImageURL, $backgroundSize, $backgroundPositionX,
+//             $backgroundPositionY, $backgroundRepeat, $backgroundAttachment, $backgroundBlendMode)
+//
+//------------------------------------------------
+//## For Full Border
+//
+// @include border($width, $style, $color, $radius)
+//
+//------------------------------------------------
+//## For Full Border
+//
+// @include border($width, $style, $color, $radius)
+//
+//------------------------------------------------
+//## Border for a single Side
+//
+// @include borderSingle($side, $width, $style, $color, $radius)
+//
+//------------------------------------------------
+//## For Box shadow
+//
+//  @include boxShadow($h, $v, $blur, $spread, $color)
+//
+//-------------------------------------------------
+//## For Text shadow
+//
+//  @include textShadow($h, $v, $blur, $spread, $color)
+//
+//-------------------------------------------------
+//## Set Margin
+//
+// @include marg($top: 0, $left: 0, $bottom: 0, $right: 0)
+//
+//------------------------------------------------
+//## Set Padding
+//
+// @include padd($top: 0, $left: 0, $bottom: 0, $right: 0)
+//
+//------------------------------------------------
+//## Set Padding
+//
+// @include padd($top: 0, $left: 0, $bottom: 0, $right: 0)
+//
+//------------------------------------------------
+//## Set Font Size and Proportional Line Height
+//
+// fontSize($fontSize: 1rem)
+// 
+//------------------------------------------------
+//## Responsive Media Query for Common Mobile
+//
+//  @include mobile
+//
+//-------------------------------------------------
+//## Responsive Media Query for Common Tablet
+//
+//  @include tablet
+//
+//-------------------------------------------------
+//## Responsive Media Query for Common Desktop
+//
+//  @include desktop
+//
+//-------------------------------------------------
+//## Responsive Media Query for Common Large Desktops
+//
+//  @include desktop-large
+//
+//-------------------------------------------------
+//## Custom Responsive Media Queries  
+//
+// @include mq($min-width, $max-width)
+// 
+//-------------------------------------------------
+//  Default Font - Opens Sans
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
+//  Default Font for pre, code
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i");
 
 // Base Files
@@ -18,6 +133,3 @@
 
 // Helper Files
 @import "./partials/helpers/helpers";
-
-// Media Queries for Responsive Design
-@import "./partials/responsive/responsive";
